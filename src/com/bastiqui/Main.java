@@ -48,11 +48,11 @@ public class Main {
     private static void altaClient(Bank bank, int count) {
         System.out.print("Nom: ");
         String nom = scanner.nextLine();
-        //System.out.print("DNI: ");
-        //String dni = scanner.nextLine();
+        System.out.print("DNI: ");
+        String dni = scanner.nextLine();
 
         try { // Comprovacio del DNI del client
-            client = new Client(nom, "12345678A");
+            client = new Client(nom, dni);
             bank.setClients(client, count);
             System.out.println("Client afegit correctament, el seu numero de compte es: " + bank.getNumCompte(count));
         } catch (ClientAccountException e) {
