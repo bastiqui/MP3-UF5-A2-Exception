@@ -1,7 +1,5 @@
 package com.bastiqui;
 
-import static com.bastiqui.ClientAccountException.*;
-
 public class Client {
     private String nom;
     private String dni;
@@ -9,14 +7,14 @@ public class Client {
 
     Client(String nom, String dni) throws ClientAccountException {
         if (nom.isEmpty()) {
-            throw new ClientAccountException(EMPTY_NOM);
+            throw new ClientAccountException(ClientAccountException.EMPTY_NOM);
         } else {
             this.nom = nom;
         }
         if (dni.matches(check_dni)) {
             this.dni = dni;
         } else {
-            throw new ClientAccountException(WRONG_DNI);
+            throw new ClientAccountException(ClientAccountException.WRONG_DNI);
         }
     }
 
