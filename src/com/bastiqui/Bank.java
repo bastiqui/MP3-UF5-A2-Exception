@@ -27,7 +27,7 @@ public class Bank {
         if (quantitat > llistaComptes.get(compteOrigen).getSaldo()) throw new BankAccountException(BankAccountException.INSUFICIENT_CREDITS); // Si la quantitat es major que la que te la persona
         else if (quantitat < 0) throw new BankAccountException(BankAccountException.NEGATIVE_TRANSFER); // Si la quantitat es negativa
         else  if (quantitat == 0) throw new BankAccountException(BankAccountException.TRANSFER_ERROR); // Si la quantitat es 0
-        else if (llistaComptes.equals(llistaComptes.get(compteOrigen).getNumCompte())) throw new BankAccountException(BankAccountException.SAME_ACCOUNT); // Si el compte desti i l'origen es el mateix
+        else if (llistaComptes.get(compteOrigen).getNumCompte().equals(llistaComptes.get(compteOrigen).getNumCompte())) throw new BankAccountException(BankAccountException.SAME_ACCOUNT); // Si el compte desti i l'origen es el mateix
         else {
             llistaComptes.get(compteOrigen).setSaldo((llistaComptes.get(compteOrigen).getSaldo()) - quantitat);
             llistaComptes.get(compteDesti).setSaldo((llistaComptes.get(compteDesti).getSaldo()) + quantitat);
